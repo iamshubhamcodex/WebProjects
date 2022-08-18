@@ -1,0 +1,32 @@
+.alert {
+  position: absolute;
+  min-height: 3rem;
+  min-width: 6rem;
+  border: 1px solid white;
+  z-index: 1000;
+  top: 90vh;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 0.5rem;
+  line-height: 1.5rem;
+  padding: 0.5rem 1rem;
+  display: grid;
+  place-items: center;
+  font-size: 1.2rem;
+  background: #ff5a01;
+  box-shadow: 0.3rem 0.4rem 0.7rem -0.5rem black;
+  color: white;
+}
+.alert .undo {
+  position: absolute;
+  cursor: pointer;
+  width: 100%;
+  transform: translateX(120%);
+  border: 1px solid #ff5a01;
+  color: #ff5a01;
+  box-shadow: 0.3rem 0.4rem 0.7rem -0.5rem black;
+  height: 100%;
+  display: grid;
+  place-content: center;
+  border-radius: 0.5rem;
+}

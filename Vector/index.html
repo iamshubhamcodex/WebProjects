@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vector Addition</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body id="body">
+    <input class="ai" type="text" />
+    <input class="bi" type="text" />
+    <input class="an" type="text" />
+    <button onclick="gen()">Create</button>
+    <br />
+    <p class="mag"></p>
+    <p class="anglee"></p>
+    <div class="a v">.</div>
+    <div class="b v">.</div>
+    <div class="r v">.</div>
+    <script>
+      let inpa = $(".ai");
+      let inpb = $(".bi");
+      let a = 50,
+        b = 50;
+      let alpha = $(".an");
+      let alphaN = parseInt(alpha.value);
+
+      function $(val) {
+        return document.querySelector(val);
+      }
+
+      function gen() {
+        a = parseInt(inpa.value);
+        b = parseInt(inpb.value);
+        alphaN = parseInt(alpha.value);
+        body.style.setProperty("--baseLA", a + "px");
+        body.style.setProperty("--baseLB", b + "px");
+        body.style.setProperty("--resL", resM() + "px");
+        body.style.setProperty("--baseA", alphaN + "deg");
+        body.style.setProperty("--resA", 90 - resA() + "deg");
+        $(".mag").innerHTML = resM();
+        $(".anglee").innerHTML = 90 - resA();
+      }
+
+      function resM() {
+        return Math.sqrt(a * a + b * b + 2 * a * b * Math.cos(atr(alphaN)));
+      }
+
+      function resA() {
+        let aa = rta(
+          Math.atan((a + b * approxc(alphaN)) / (b * approxs(alphaN)))
+        );
+        return aa;
+      }
+      function approxc(angle) {
+        return parseFloat(Math.cos(atr(angle)).toString().substring(0, 4));
+      }
+      function approxs(angle) {
+        return parseFloat(Math.sin(atr(angle)).toString().substring(0, 4));
+      }
+      function rta(angle) {
+        return 180 * (angle / Math.PI);
+      }
+      function atr(angle) {
+        return parseFloat((Math.PI / (180 / angle)).toString().substring(0, 4));
+      }
+    </script>
+  </body>
+</html>

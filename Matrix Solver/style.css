@@ -1,0 +1,33 @@
+.inputs {
+  display: flex;
+  justify-content: center;
+  /* align-items: center; */
+}
+.mat {
+  display: flex;
+  width: 22rem;
+  flex-wrap: wrap;
+  border-left: 2px solid black;
+  border-right: 2px solid black;
+}
+.mat .inp {
+  height: 7rem;
+  width: 7rem;
+  position: relative;
+  display: grid;
+  place-content: center;
+  font-size: 2rem;
+  font-weight: 900;
+}
+.mat .inp input {
+  height: 100%;
+  width: 100%;
+  border: none;
+  outline: none;
+  font-size: 2rem;
+  font-weight: 900;
+}
+
+.res {
+  margin: 0 auto;
+}

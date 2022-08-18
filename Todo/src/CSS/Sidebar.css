@@ -1,0 +1,103 @@
+.sidebar {
+  width: 27rem;
+  height: calc(100vh - 5rem);
+  transition: all 0.4s ease;
+  background: #eeeeee;
+  box-shadow: 7px 0 5px -5px rgb(0 0 0 / 63%);
+  padding: 1rem 2.5rem 2rem 2.5rem;
+}
+.sidebar .head {
+  position: relative;
+  font-size: 2rem;
+  font-weight: bold;
+  margin: 0 1rem;
+  font-family: -webkit-pictograph;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.sidebar .head .adc {
+  font-size: 0;
+}
+.sidebar ul {
+  list-style: none;
+  margin-top: 1rem;
+}
+.sidebar ul li {
+  position: relative;
+  margin: 1.2rem auto;
+  font-size: 1.7rem;
+  font-weight: lighter;
+  font-family: -webkit-pictograph;
+  cursor: pointer;
+  padding: 0.5rem 2rem;
+  z-index: 1;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+}
+.sidebar ul li .cat_item_g,
+.sidebar ul li .cat_item {
+  width: 100%;
+}
+.sidebar ul li #edtar {
+  width: 65%;
+  outline: none;
+  padding: 0 0.5rem;
+  font-size: 1.5rem;
+}
+.sidebar ul li .fa {
+  transform: scale(0.9);
+  display: none;
+  padding: 0.8rem;
+  border-radius: 8px;
+}
+.sidebar ul li:hover .fa {
+  display: block;
+  color: #ff5a01;
+}
+.sidebar ul li .fa:hover {
+  background-color: rgba(153, 152, 152, 0.397);
+}
+.sidebar ul li .fa-trash-o {
+  position: absolute;
+  z-index: 10;
+  right: 0.5rem;
+  top: 0;
+}
+.sidebar ul li .fa-pencil-square-o {
+  position: absolute;
+  z-index: 10;
+  right: 3rem;
+  top: 0;
+}
+.inp {
+  margin: 0 !important;
+  padding: 0 !important;
+  transition: all 0.3s ease;
+}
+.sidebar ul li .d-inp {
+  transition: all 0.3s ease;
+  display: none;
+  outline: none;
+  width: 100%;
+  padding: 0 0.7rem;
+}
+.sidebar ul .inp.show {
+  padding: 0.1rem 2rem !important;
+}
+.sidebar ul li:hover {
+  transition: all 0.3s ease;
+  background-color: rgba(255, 255, 255, 0.75);
+  border-radius: 5px;
+}
+.sidebar ul .inp.show .d-inp {
+  display: block;
+  margin: 1rem auto;
+}
+.fa-plus-circle::before {
+  content: "\f0c9";
+  font-size: 1.9rem;
+  color: #ff5a01;
+  cursor: pointer;
+}

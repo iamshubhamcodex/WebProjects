@@ -1,0 +1,223 @@
+.task {
+  width: 100%;
+  min-height: calc(100vh - 5rem);
+  transition: all 0.4s ease;
+  padding: 2rem 5rem;
+  overflow-y: auto;
+  /* padding-bottom: 20px; */
+}
+.task::-webkit-scrollbar {
+  display: none;
+}
+.task .head {
+  font-size: 3rem;
+  font-weight: bolder;
+  font-family: -webkit-pictograph;
+  font-variant: petite-caps;
+  position: relative;
+}
+.task .head .addTask {
+  position: absolute;
+  right: 1rem;
+  height: 2.4rem;
+  width: 2.4rem;
+  font-family: "FontAwesome";
+  cursor: pointer;
+}
+.task .head .addTask::before {
+  content: "\f0fe";
+  color: #ff5a01;
+}
+.task .container {
+  width: 98%;
+  height: 90%;
+  margin: 1rem;
+  margin-top: 3rem;
+}
+.task .container .inpTask {
+  height: 0;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.3s ease-in-out;
+  overflow: hidden;
+}
+.task .container .inpTask.show {
+  position: relative;
+  border-radius: 1rem;
+  border: 1px solid #868686;
+  height: 10rem;
+  padding: 1rem 2rem;
+}
+.task .container .inpTask.show .minLen {
+  position: absolute;
+  right: 2%;
+  color: grey;
+}
+.task .container .inpTask .adHd {
+  display: none;
+}
+.task .container .inpTask input {
+  outline: none;
+  border: none;
+}
+.task .container .inpTask .taskText {
+  height: 100%;
+  font-size: 1.2rem;
+}
+.task .container .inpTask .inpD {
+  font-size: 1.7rem;
+  font-weight: bold;
+}
+.task .container ul {
+  position: relative;
+  list-style: none;
+}
+.task .container ul .li {
+  width: 67%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-right: 1rem;
+  margin: 1rem auto;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+.task .container ul .li .checkL {
+  position: relative;
+  width: 105%;
+  height: 5rem;
+  padding: 0.5rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.task .container ul .li .icon {
+  position: relative;
+  width: 5rem;
+  height: 5rem;
+  margin: 0 0 0 1.2rem;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  z-index: 100;
+}
+.task .container ul .checkB {
+  padding: 0;
+  margin-bottom: 0;
+  height: 2.1rem;
+  width: 2.1rem;
+  display: none;
+  cursor: pointer;
+  background-color: transparent;
+  transition: all 0.3s ease;
+}
+.task .container ul .li.checked {
+  transform: scale(0.7);
+  margin: 0 auto;
+}
+.task .container ul .checkL:before {
+  content: "";
+  border: 1px solid grey;
+  border-radius: 50%;
+  padding: 0.8rem;
+  display: inline-block;
+  position: relative;
+  vertical-align: middle;
+  cursor: pointer;
+}
+/* .task .container ul li .tInp:hover .checkL:before {
+  background-color: rgb(212, 212, 212);
+} */
+.task .container ul .checkB:checked + .checkL:after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 1.7rem;
+  left: 1.59rem;
+  width: 0.4rem;
+  height: 1.2rem;
+  border: solid #ff5a01;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg) scale(0.8);
+}
+
+.task .container ul .li .checkL li {
+  width: 100%;
+  height: 5rem;
+  padding: 0 0.5rem;
+  margin-left: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: all 0.3s ease;
+}
+.task .container ul .li .checkL li .ta-de {
+  width: 100%;
+  margin: 0.5rem 0;
+  height: 100%;
+}
+.task .container ul .li .checkL li .ta-de .t_head {
+  font-size: 1.5rem;
+  margin-bottom: 0.2rem;
+}
+.task .container ul .li .checkL li .ta-de .t_desc {
+  font-size: 1rem;
+  color: grey;
+}
+.task .container ul .li.checked .icon {
+  right: 0;
+}
+.task .container ul .li .icon .fa {
+  color: #ff5a01;
+  padding: 0.8rem;
+  border-radius: 8px;
+  font-size: 1.7rem;
+  cursor: pointer;
+  visibility: hidden;
+  transition: all 0s ease;
+}
+.task .container ul .li .icon .fa:hover {
+  background-color: rgba(153, 152, 152, 0.397);
+}
+.task .container ul .li:hover,
+.task .container ul .li.checked {
+  background-color: #eeeeee;
+  border-radius: 1rem;
+}
+.task .container ul .li.checked {
+  width: 60%;
+}
+.task .container ul .li:hover .icon .fa {
+  visibility: visible;
+}
+.task .container ul .li .checkL li:hover .ta-de {
+  margin: 0px !important;
+}
+.t_head:focus,
+.t_desc:focus {
+  outline: none;
+  border: none;
+  border-left: 2px solid orange;
+  padding-left: 2px;
+}
+.uls {
+  display: flex;
+}
+.uls ul {
+  transform: scale(0.8);
+  width: 100%;
+  height: 100%;
+  transition: all 0.3s ease;
+  position: relative;
+}
+.uls ul .li.checked {
+  width: 150%;
+  margin: 0;
+}
+.uls ul .li {
+  width: 150%;
+  margin: 1rem 0;
+}

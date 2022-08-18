@@ -1,0 +1,62 @@
+/* body{
+
+} */
+body {
+  --baseLA: 50px;
+  --baseLB: 50px;
+  --resL: 85px;
+  --baseA: 60deg;
+  --resA: 30deg;
+}
+
+div.v {
+  width: 2px;
+  position: absolute;
+
+  color: transparent;
+}
+div.v::after {
+  content: "";
+  position: absolute;
+  height: 10px;
+  width: 2px;
+  background-color: black;
+  top: 0;
+  right: -2.2px;
+  transform: rotate(-25deg);
+}
+
+div.v::before {
+  content: "";
+  position: absolute;
+  height: 10px;
+  width: 2px;
+  background-color: black;
+  top: 0;
+  right: 2.2px;
+  transform: rotate(25deg);
+}
+.a {
+  height: var(--baseLA);
+  bottom: 50%;
+  left: 50%;
+  transform: rotate(90deg);
+  background-color: red;
+  transform-origin: bottom;
+}
+.b {
+  height: var(--baseLB);
+  bottom: 50%;
+  left: calc(50% + var(--baseLA));
+  transform: rotate(calc(90deg - var(--baseA)));
+  transform-origin: bottom;
+  background-color: blue;
+}
+.r {
+  height: var(--resL) !important;
+  bottom: 50%;
+  left: 50%;
+  transform: rotate(calc(90deg - var(--resA)));
+  transform-origin: bottom;
+  background-color: black;
+}
