@@ -1,0 +1,163 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  height: 100vh;
+  width: 100vw;
+  position: relative;
+  overflow: hidden;
+}
+/* **********START START ********************************** */
+.start {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  opacity: 1;
+  transition: all 1.5s ease-out;
+}
+.start img {
+  width: 100%;
+  height: 100%;
+  /* background-position: fixed; */
+  animation: animateStart 2s ease-in-out;
+  object-fit: cover;
+}
+.start button {
+  cursor: pointer;
+  position: fixed;
+  top: 70%;
+  left: 50%;
+  transform: scale(1) translate(-50%, -70%);
+  padding: 23px 41px;
+  font-size: 35px;
+  border: none;
+  outline: none;
+  opacity: 1;
+  z-index: 51;
+  color: white;
+  border-radius: 16px;
+  background: rgba(0, 0, 0, 0.25);
+  animation: animateStartBtn 2s ease-in-out;
+}
+@keyframes animateStartBtn {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+}
+@keyframes animateStart {
+  from {
+    transform: scale(1.3) translateY(-50px);
+  }
+}
+/* *********START END **************************** */
+
+/* *********WINDOW START **************************** */
+.bgVid {
+  z-index: -51;
+}
+#vid {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  object-fit: cover;
+  opacity: 0;
+  z-index: -10;
+  transition: all 1s;
+}
+.icons {
+  transition: all 0.5s ease-in;
+  transition-delay: 1s;
+  position: absolute;
+  top: 6px;
+  left: -150px;
+  height: 100vh;
+  width: max-content;
+}
+.taskbar {
+  position: fixed;
+  bottom: -5px;
+  height: 46px;
+  width: 100%;
+  opacity: 0;
+  z-index: 500;
+  transition: all 1s ease-in;
+  display: flex;
+  background-color: #f3f3f3;
+  justify-content: center;
+}
+.taskbar img {
+  height: 100%;
+}
+.taskbar img:last-child {
+  position: absolute;
+  right: 0px;
+}
+.taskbar1 {
+  position: fixed;
+  bottom: -5px;
+  height: 46px;
+  width: 100%;
+  opacity: 0;
+  z-index: 500;
+  transition: all 1s ease-in;
+  display: flex;
+  background-color: #f3f3f3;
+  /* justify-content: center; */
+}
+.taskbar1 .taskIcon {
+  width: calc(100vw - 270px);
+  position: relative;
+}
+.taskbar1 .taskIcon .imggg {
+  width: max-content;
+  position: absolute;display: flex;
+  justify-content: space-around;
+  align-items: center;
+  left: 60%;
+  transform: translateX(-50%);
+}
+.taskbar1 .taskIcon .imggg img{
+    cursor: pointer;
+}
+.taskbar1 .taskIcon .imggg .searchBox {
+    outline: none;
+    border: none;
+    height: 25px;
+    border-radius: 5px;
+    width: 0px;
+    transition: all 0.5s;
+    padding: 0px;
+    border: 0px solid grey;
+    box-shadow: 5px 2px 7px -2px rgba(0, 0, 0, 0.5);
+}
+.taskbar1 .taskIcon .imggg .searchBox.active {
+    width: 175px;
+    padding: 0px 8px;
+    border: 1px solid grey;
+
+}
+.taskbar1 .rightTask {
+  position: absolute;
+  right: 0;
+  width: max-content;
+}
+.startMenu {
+  position: absolute;
+  bottom: -653px;
+  transition: all 1.5s ease-in-out;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  background-color: transparent;
+}
+.startMenu.active {
+    position: absolute;
+    bottom:0px
+}
+.startMenu img {
+  border-radius: 10px;
+}
+/* *********WINDOW END **************************** */
